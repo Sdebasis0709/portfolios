@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Contact | Debasis Sahoo</title><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet"><style>:root{--bg:#0d1220;--ink:#eef2fb;--mut:#a5b0c8;--a:#7de3d4;--b:#ffb86b;--glass:rgba(255,255,255,.08);--edge:rgba(255,255,255,.2)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font:16px/1.6 Sora,system-ui,sans-serif;color:var(--ink);background:radial-gradient(1200px 700px at 15% 10%,#1e2d5a,transparent 60%),radial-gradient(900px 600px at 90% 90%,#0f4a52,transparent 60%),var(--bg);background-attachment:fixed;overflow-x:hidden}
+#bg{position:fixed;inset:0;z-index:0}
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:4px;padding:6px;border-radius:999px;background:var(--glass);border:1px solid var(--edge);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);box-shadow:0 10px 40px #0006}
+nav a{color:var(--mut);text-decoration:none;padding:8px 18px;border-radius:999px;font-size:14px;transition:.25s}
+nav a:hover{color:var(--ink);background:#ffffff14}
+nav a.on{color:#0d1220;background:var(--ink)}
+main{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:110px 20px 70px;perspective:1400px}
+.glass{position:relative;padding:28px;border-radius:28px;background:var(--glass);border:1px solid var(--edge);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 30px 60px -20px #000a,inset 0 1px 0 #ffffff30;transition:transform .45s cubic-bezier(.2,.8,.2,1);will-change:transform;margin-bottom:22px}
+h1{font-size:clamp(40px,7vw,76px);line-height:1.04;letter-spacing:-.03em}
+h2{font-size:26px;letter-spacing:-.01em;margin-bottom:10px}
+h3{font-size:18px}
+p,li{color:var(--mut)}
+.role{color:var(--a);font-size:18px;margin:14px 0 8px}
+.hero{max-width:560px;margin-top:6vh}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{padding:11px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;color:#0d1220;background:var(--a);transition:.25s}
+.btn.alt{background:#ffffff14;color:var(--ink);border:1px solid var(--edge)}
+.btn.alt:hover{background:#ffffff24}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.stat b{display:block;font-size:34px;color:var(--b)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.job .when{color:var(--b);font-size:13px}
+.job .proj{color:var(--ink);margin:8px 0 4px;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tags span{padding:3px 11px;border-radius:99px;font-size:12px;background:#7de3d41c;color:var(--a);border:1px solid #7de3d433}
+ul{padding-left:18px}li{margin:6px 0;font-size:14.5px}
+.chip{display:inline-block;margin:4px;padding:6px 14px;border-radius:99px;font-size:13px;color:var(--ink);background:#ffffff12;border:1px solid var(--edge);transition:.25s}
+.chip:hover{background:#7de3d430}
+blockquote{font-size:18px;line-height:1.65;color:var(--ink);border-left:3px solid var(--b);padding-left:16px}
+cite{display:block;margin-top:12px;color:var(--mut);font-size:13px}
+.contact a.row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--edge);color:var(--ink);text-decoration:none}
+.contact a.row:hover span{color:var(--a)}
+.contact span{color:var(--mut)}
+footer{position:relative;z-index:1;text-align:center;color:var(--mut);font-size:13px;padding-bottom:30px}
+@media(max-width:640px){nav a{padding:8px 11px;font-size:13px}.glass{padding:20px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* animated background */
+body::before,body::after{content:"";position:fixed;z-index:0;width:60vmax;height:60vmax;border-radius:50%;filter:blur(50px);pointer-events:none}
+body::before{left:-18vmax;top:-14vmax;background:radial-gradient(circle,#5b6cff55,transparent 65%);animation:drift 22s ease-in-out infinite alternate}
+body::after{right:-20vmax;bottom:-18vmax;background:radial-gradient(circle,#7de3d444,transparent 65%);animation:drift 28s ease-in-out infinite alternate-reverse}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(8vmax,6vmax) scale(1.2)}100%{transform:translate(-4vmax,12vmax) scale(.95)}}
+/* intro: heading, then objects, then layouts */
+#intro{position:fixed;inset:0;z-index:4;display:grid;place-content:center;text-align:center;pointer-events:none;opacity:0;transition:opacity .9s,transform .9s}
+#intro h1{letter-spacing:.14em;transition:letter-spacing 1.8s cubic-bezier(.2,.8,.2,1)}
+body.i1 #intro{opacity:1}body.i1 #intro h1{letter-spacing:-.03em}
+body.i2 #intro{opacity:0;transform:translateY(-40px) scale(.96)}
+body.i3 #intro{display:none}
+nav,footer{opacity:0;transition:opacity .8s}
+body.i3 nav,body.i3 footer{opacity:1}
+.glass{opacity:0}
+body.i3 .glass{opacity:1;animation:rise .9s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;transform:translateY(70px) rotateX(-16deg) scale(.95)}to{opacity:1;transform:none}}
+#skip{position:fixed;bottom:16px;right:18px;z-index:6;font-size:12px;color:var(--mut);opacity:0;transition:opacity .5s}
+body.i1:not(.i3) #skip{opacity:.8}
+
+.stage{position:relative;height:clamp(300px,44vh,420px);margin:0 0 22px;pointer-events:none}
+.stage::after{content:"";position:absolute;left:12%;right:12%;bottom:6%;height:26px;background:radial-gradient(ellipse at center,#7de3d44d,transparent 70%);filter:blur(6px)}
+
+.hero{margin-top:0}
+@media(max-width:1024px){.stage{height:340px}main{padding-top:104px}}
+@media(max-width:640px){.stage{height:270px}main{padding:98px 14px 50px}.glass{border-radius:22px}.btn{padding:10px 18px}}
+@media(max-width:400px){nav{top:10px;padding:4px}nav a{padding:7px 9px;font-size:12.5px}}
+
+.btn{display:inline-block}
+a:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+.ico{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.ico a{width:50px;height:50px;border-radius:16px;display:grid;place-items:center;color:var(--ink);background:#ffffff14;border:1px solid var(--edge);transition:color .25s,background .25s,box-shadow .25s}
+.ico svg{width:22px;height:22px}
+.ico .l:hover{background:#0a66c2;color:#fff}.ico .g:hover{background:#fff;color:#0d1220}.ico .c:hover{background:var(--a);color:#0d1220}.ico .e:hover{background:var(--b);color:#0d1220}.ico .w:hover{background:#25d366;color:#0d1220}
+</style></head><body data-scene="contact"><canvas id="bg"></canvas><nav><a href="index.html">Home</a><a href="experience.html">Experience</a><a href="skills.html">Skills</a><a href="contact.html" class=on>Contact</a></nav><main><div class="stage"></div>
+<section class="glass contact" style="max-width:520px"><h1 style="font-size:clamp(34px,5vw,56px)">Let’s talk</h1><p>Open to data engineering and Python backend roles.</p><div class="ico"><a class="l" href="https://www.linkedin.com/in/debasis-sahoo-5a7866249" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a class="g" href="https://github.com/Sdebasis0709" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a><a class="c" href="tel:+916371599342" aria-label="Call" title="Call"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a><a class="e" href="mailto:sahoodebasis125@gmail.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 7 12 13 2 7"/></svg></a><a class="w" href="https://wa.me/916371599342" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a></div><a class="row" href="mailto:sahoodebasis125@gmail.com" >Email <span>sahoodebasis125@gmail.com</span></a><a class="row" href="tel:+916371599342" >Call <span>+91-6371599342</span></a><a class="row" href="https://wa.me/916371599342" target="_blank" rel="noopener noreferrer">WhatsApp <span>+91-6371599342</span></a><a class="row" href="https://www.linkedin.com/in/debasis-sahoo-5a7866249" target="_blank" rel="noopener noreferrer">LinkedIn <span>debasis-sahoo</span></a><a class="row" href="https://github.com/Sdebasis0709" target="_blank" rel="noopener noreferrer">GitHub <span>Sdebasis0709</span></a><a class="row" href="#" >Location <span>Bengaluru, India</span></a></section>
+<section class="glass" style="max-width:640px"><h2>What a client said</h2><blockquote>Strong technical knowledge, ownership and problem-solving ability. Highly responsive, open to feedback and consistently committed to quality work. I would confidently recommend him.<cite>S R Ramesh Raju, Founder, The Benchmates and iamAIplus</cite></blockquote></section>
+<section class="glass" style="max-width:640px"><h2>Education</h2><p>B.Tech in Computer Science and Engineering, Biju Patnaik University of Technology, Cuttack · 2019 – 2023</p><h3 style="margin-top:18px">Achievements</h3><ul><li>Led end-to-end delivery of a production LMS (iamAIplus), owning architecture, sprints, client requirements and releases.</li><li>Built real-time market data streaming to trading dashboards for the iStreet trading platform.</li><li>Designed async pub-sub pipelines for long-running enterprise workflows on iAppy.</li><li>Recommended in writing by an IIT Madras corporate technology trainer and founder of The Benchmates.</li></ul></section>
+</main><footer>© 2026 Debasis Sahoo · Bengaluru</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script>// Intro timeline: heading -> objects -> layouts
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const t0=performance.now();let off=reduce?100:0;const now=()=>(performance.now()-t0)/1000+off;
+const TITLES={home:['Debasis Sahoo','Data Engineer · Python Engineer'],exp:['Experience','Three roles, one thread: data that moves'],skills:['Skills','What I build with'],contact:['Let’s talk','Open to data engineering roles']};
+(function(){
+  const s=document.body.dataset.scene,T=TITLES[s]||TITLES.home;
+  const i=document.createElement('div');i.id='intro';i.innerHTML='<h1>'+T[0]+'</h1><p class="role">'+T[1]+'</p>';document.body.appendChild(i);
+  const k=document.createElement('div');k.id='skip';k.textContent='Click to skip intro';document.body.appendChild(k);
+  document.querySelectorAll('main:not([hidden]) .glass').forEach((g,n)=>g.style.setProperty('--d',(n*.13)+'s'));
+  const st=[[.2,'i1'],[1.9,'i2'],[4.3,'i3']];
+  (function tick(){const t=now();st.forEach(([a,c])=>{if(t>=a)document.body.classList.add(c)});if(!document.body.classList.contains('i3'))requestAnimationFrame(tick)})();
+  addEventListener('pointerdown',()=>{if(off<100)off=100});
+})();
+// Tilt: the side under the pointer sinks back, like a finger pressing paper
+document.querySelectorAll('.glass').forEach(el=>{
+  const tilt=e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    el.style.transition='transform .1s ease-out';el.style.transform=`rotateY(${x*14}deg) rotateX(${-y*14}deg)`};
+  const rest=()=>{el.style.transition='';el.style.transform=''};
+  el.addEventListener('pointermove',tilt);el.addEventListener('pointerdown',tilt);
+  el.addEventListener('pointerleave',rest);el.addEventListener('pointercancel',rest);
+  el.addEventListener('pointerup',e=>{if(e.pointerType!=='mouse')rest()});
+});
+// 3D scene (Three.js)
+(function(){
+  const cv=document.getElementById('bg');if(!cv||!window.THREE)return;
+  const T=THREE,R=new T.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+  R.setPixelRatio(Math.min(devicePixelRatio,1.5));
+  const S=new T.Scene(),C=new T.PerspectiveCamera(50,1,.1,100);C.position.z=9;
+  S.add(new T.AmbientLight(0xffffff,.6));const L=new T.PointLight(0x7de3d4,1.6,60);L.position.set(5,6,8);S.add(L);
+  const L2=new T.PointLight(0xffb86b,1.2,60);L2.position.set(-6,-3,6);S.add(L2);
+  const M=(c,o={})=>new T.MeshStandardMaterial(Object.assign({color:c,roughness:.35,metalness:.3},o));
+  // background particles (drifting data motes)
+  const N=450,pa=new Float32Array(N*3),sp=[];
+  for(let i=0;i<N;i++){pa[i*3]=(Math.random()-.5)*34;pa[i*3+1]=(Math.random()-.5)*20;pa[i*3+2]=(Math.random()-.5)*20-4;sp.push(.004+Math.random()*.012)}
+  const pg=new T.BufferGeometry();pg.setAttribute('position',new T.BufferAttribute(pa,3));
+  const pts=new T.Points(pg,new T.PointsMaterial({color:0x9fe9df,size:.07,transparent:true,opacity:.75,depthWrite:false}));S.add(pts);
+  const G=new T.Group();S.add(G);const spin=[];
+  const add=(geo,mat,x,y,z)=>{const m=new T.Mesh(geo,mat);m.position.set(x,y,z);G.add(m);return m};
+  const scene=document.body.dataset.scene;
+  if(scene==='home'){
+    const sk=M(0xf0c8a0),sh=M(0x3b6ea8),pn=M(0x24324f);
+    add(new T.SphereGeometry(.5,12,10),sk,0,1.55,0);
+    add(new T.CylinderGeometry(.45,.55,1.3,8),sh,0,.55,0);
+    add(new T.CylinderGeometry(.16,.14,1,6),sh,-.72,.55,.25).rotation.x=-.7;
+    add(new T.CylinderGeometry(.16,.14,1,6),sh,.72,.55,.25).rotation.x=-.7;
+    add(new T.BoxGeometry(1.2,.35,.9),pn,0,-.3,.2);
+    add(new T.BoxGeometry(1.5,.07,1),M(0xcfd8e8),0,.15,.95);
+    add(new T.BoxGeometry(1.5,.95,.07),M(0x7de3d4,{emissive:0x7de3d4,emissiveIntensity:.5}),0,.6,.5).rotation.x=-.25;
+    for(let i=0;i<4;i++){const d=new T.Group();[0,.32,.64].forEach(y=>{const c=new T.Mesh(new T.CylinderGeometry(.5,.5,.26,24),M(i%2?0xffb86b:0x7de3d4));c.position.y=y;d.add(c)});d.userData={a:i*1.57,r:3.1,y:i*.5-.8};G.add(d);spin.push(d)}
+  }else if(scene==='exp'){ // animated bar chart + sine data wave on a base plate
+    add(new T.BoxGeometry(5.4,.14,1.4),M(0x24324f),0,-1.38,0);
+    for(let i=0;i<9;i++){const b=add(new T.BoxGeometry(.42,2.6,.42),M(i%2?0xffb86b:0x7de3d4),-2+i*.5,0,0);b.userData={bar:i};spin.push(b)}
+    for(let i=0;i<15;i++){const w=add(new T.SphereGeometry(.085,10,10),M(0xffffff,{emissive:0x7de3d4,emissiveIntensity:.6}),-2.8+i*.4,1.95,.2);w.userData={w:i};spin.push(w)}
+  }else if(scene==='skills'){
+    const c=add(new T.IcosahedronGeometry(1.2,1),M(0x7de3d4,{wireframe:true}),3.4,0,0);c.userData.s=1;spin.push(c);
+    for(let i=0;i<14;i++){const o=new T.Mesh(new T.SphereGeometry(.18+Math.random()*.12,16,16),M(i%3?0x7de3d4:0xffb86b));o.userData={a:Math.random()*6.28,r:1.8+Math.random()*1.4,y:(Math.random()-.5)*2.4,sp:.2+Math.random()*.5};G.add(o);spin.push(o)}
+  }else{ // envelope + phone + chat bubbles + paper plane
+    const env=new T.Group();G.add(env);
+    const body=new T.Mesh(new T.BoxGeometry(2.4,1.6,.2),M(0xf2f5ff));body.position.y=-.3;env.add(body);
+    const fs=new T.Shape();fs.moveTo(-1.2,.5);fs.lineTo(1.2,.5);fs.lineTo(0,-.4);fs.closePath();
+    const flap=new T.Mesh(new T.ExtrudeGeometry(fs,{depth:.06,bevelEnabled:false}),M(0xffb86b));flap.position.z=.11;env.add(flap);
+    const ph=new T.Group();ph.position.set(2.2,-.1,.3);ph.rotation.z=-.15;G.add(ph);
+    ph.add(new T.Mesh(new T.BoxGeometry(.9,1.7,.12),M(0x1b2540)));
+    const sc=new T.Mesh(new T.BoxGeometry(.78,1.5,.02),M(0x7de3d4,{emissive:0x7de3d4,emissiveIntensity:.55}));sc.position.z=.07;ph.add(sc);
+    [[-2.3,.9,.3,.3],[-1.8,1.45,.2,.2],[-2.55,.2,.1,.17]].forEach(([x,y,z,r],i)=>{const b=add(new T.SphereGeometry(r,20,20),M(i%2?0xffb86b:0x7de3d4),x,y,z);b.userData={bob:i*2,y0:y};spin.push(b)});
+    const ring=add(new T.TorusGeometry(.32,.07,12,28),M(0xffffff),-2.2,-.95,.2);ring.userData={s:1};spin.push(ring);
+    const pl=add(new T.ConeGeometry(.17,.55,3),M(0xffb86b,{emissive:0xffb86b,emissiveIntensity:.3}),0,0,0);pl.userData={pl:1};spin.push(pl);
+  }
+  const ext={home:[6.8,4.4],exp:[5.8,4],skills:[6.8,3.4],contact:[5.8,3.4]}[scene],cyo={home:.45,exp:.45,contact:.25}[scene]||0,cx=scene==='skills'?3.4:0;
+  G.children.forEach(c=>{c.position.x-=cx;c.position.y-=cyo});   // centre the object on its own origin
+  const rs=()=>{R.setSize(innerWidth,innerHeight);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix()};
+  addEventListener('resize',rs);rs();
+  let mx=0,my=0;addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+  const ez=x=>1-Math.pow(1-Math.max(0,Math.min(1,x)),3);
+  (function loop(){const t=now();
+    const k=ez((t-1.9)/1.1),e=ez((t-3.6)/1.5);   // k: appear in front of screen, e: glide into the stage slot
+    const el=document.querySelector('main:not([hidden]) .stage'),r=el?el.getBoundingClientRect():{left:0,top:innerHeight/2-150,width:innerWidth,height:300};
+    const wpp=2*Math.tan(C.fov*Math.PI/360)*C.position.z/innerHeight;
+    const tx=(r.left+r.width/2-innerWidth/2)*wpp,ty=-(r.top+r.height/2-innerHeight/2)*wpp;
+    const ts=Math.min(r.width*wpp/ext[0],r.height*wpp/ext[1])*.95;
+    G.visible=k>0;G.scale.setScalar(ts*Math.max(k,.001)*(1+(1-e)*.9));
+    G.position.set(tx*e,ty*e,(1-e)*3.5);
+    spin.forEach(o=>{const u=o.userData;if(u.s){o.rotation.y=t*.6;o.rotation.x=t*.3}
+      if(u.bar!==undefined){const s=.2+.8*(.5+.5*Math.sin(t*1.5+u.bar*.7));o.scale.y=s;o.position.y=-1.3+1.3*s-cyo}
+      if(u.w!==undefined)o.position.y=1.95+Math.sin(u.w*.75+t*2)*.35-cyo;
+      if(u.bob!==undefined)o.position.y=u.y0-cyo+Math.sin(t*1.6+u.bob)*.15;
+      if(u.pl){const a=t*.9;o.position.set(Math.cos(a)*2.6,.5-cyo+Math.sin(a*2)*.3,Math.sin(a)*1.2+.5);o.rotation.set(0,-a,-Math.PI/2)}
+      if(u.r){const a=u.a+t*(u.sp||.5);const bx=(scene==='skills'?3.4:0)-cx;o.position.set(bx+Math.cos(a)*u.r,u.y-cyo+Math.sin(t+u.a)*.2,Math.sin(a)*u.r)}});
+    G.rotation.y+=((mx*.8+(1-e)*Math.sin(t*1.4)*.7)-G.rotation.y)*.06;G.rotation.x+=((my*.4)-G.rotation.x)*.05;
+    const p=pg.attributes.position;for(let i=0;i<N;i++){let y=p.array[i*3+1]+sp[i];if(y>10)y=-10;p.array[i*3+1]=y;p.array[i*3]+=Math.sin(t*.3+i)*.0015}p.needsUpdate=true;pts.rotation.y=t*.02;
+    C.lookAt(0,0,0);R.render(S,C);requestAnimationFrame(loop)})();
+})();
+
+</script></body></html>
